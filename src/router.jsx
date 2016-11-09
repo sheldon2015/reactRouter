@@ -73,6 +73,14 @@ const router =
                 )
             })
         } } />
+        <Route path='color' getComponent={(nextState, callback) => {
+
+            require.ensure([], function (require) {
+                callback(null,
+                    require('./components/Color.jsx').default.Black
+                )
+            })
+        } } />
 
     </Route>
 

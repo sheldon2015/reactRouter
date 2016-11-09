@@ -49,6 +49,9 @@ class Side extends Component {
                     <li>
                         <NavLink to="/confirm">confirm</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/color">color</NavLink>
+                    </li>
                 </ul>
             </div>
         );

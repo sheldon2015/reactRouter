@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-
-
-
-
 class Child extends Component {
+
+
+
 
     constructor(props, context) {
         super(props, context);
         this.state = {
             value: 10
         }
+
+
     }
     handleClick = (e) => {
 
@@ -31,6 +32,11 @@ class Child extends Component {
         return (
             <div>
                 {this.state.value}
+
+                <br />
+                {
+                    this.props.name
+                }
                 <br />
                 <a onClick={this.handleClick} href="javascript:void(0)">click</a>
                 <br />
@@ -39,6 +45,11 @@ class Child extends Component {
         );
     }
 }
+
+
+Child.defaultProps = {
+    name: 'Stranger'
+};
 
 
 class Form extends Component {
@@ -91,9 +102,18 @@ class Form extends Component {
         //不用自己绑定this
         e.preventDefault(e)
         console.log(e)
+
+        console.log('this.component', this.component);
     }
 
     render() {
+
+        const props = {
+            firstName: 'Ben',
+            lastName: 'Hector',
+            callback: () => this.setState(Object.assign({}, this.state, { value: ++this.state.value }))
+        }
+
         return (
             <div>
                 <div>
@@ -101,8 +121,9 @@ class Form extends Component {
                     {this.state.value}
 
                 </div>
-                <Child callback={() => { this.setState({...this.state}) } } />
-                             <form onSubmit={this.submitHandle}>
+                {/*获取组建的引用*/}
+                <Child ref={(com) => { this.component = com;  } }  {...props} />
+                <form onSubmit={this.submitHandle}>
                     <input name="name" defaultValue="ywz" />
                     <input name="age" defaultValue="11" />
                     <input name="location" defaultValue="武汉" />
