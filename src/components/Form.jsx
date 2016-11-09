@@ -10,8 +10,6 @@ class Child extends Component {
         super(props, context);
     }
 
-
-
     handleClick = (e) => {
 
         e.preventDefault();
@@ -19,8 +17,6 @@ class Child extends Component {
         var {callback} = { ...this.props };
 
         callback();
-
-
     }
 
     render() {
