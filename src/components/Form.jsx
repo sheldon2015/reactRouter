@@ -8,6 +8,9 @@ class Child extends Component {
 
     constructor(props, context) {
         super(props, context);
+        this.state = {
+            value: 10
+        }
     }
 
     handleClick = (e) => {
@@ -18,11 +21,25 @@ class Child extends Component {
 
         callback();
     }
+    handleClick2 = (e) => {
+
+        e.preventDefault();
+
+        console.log(1);
+
+        this.setState(this.state)
+
+
+    }
 
     render() {
         return (
             <div>
+                {this.state.value}
+                <br />
                 <a onClick={this.handleClick} href="javascript:void(0)">click</a>
+                <br />
+                <a onClick={this.handleClick2} href="javascript:void(0)">click2</a>
             </div>
         );
     }
@@ -85,7 +102,7 @@ class Form extends Component {
                     {this.state.value}
 
                 </div>
-                <Child callback={() => { this.setState({...this.state, number:1}) } } />
+                <Child callback={() => { this.setState({...this.state}) } } />
                 <form onSubmit={this.submitHandle}>
                     <input name="name" defaultValue="ywz" />
                     <input name="age" defaultValue="11" />

@@ -6,14 +6,6 @@
 
 如我们可以将 /inbox 从 /inbox/messages/:id 中去除，并且还能够让 Message 嵌套在 App -> Inbox 中渲染。
 
-## 指令
-
-1. redirect 重定向
-
-
-## 属性
-
-1. routes
 
 ## 路由
 
@@ -33,6 +25,17 @@
 ## 高级特性
 
 1. 动态路由
+
+    路劲匹配和组件加载是异步完成的，可以用来延迟加载组件和路由配置，借助webpack工具，可以拆分bundle.
+
+    可以在jsx中配置route,也可以用普通的javascript对象去设置路由。
+
+    
+
+
+
+
+
 
 1. 生命周期
 
