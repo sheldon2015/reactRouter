@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
 
 
 
@@ -12,7 +11,6 @@ class Child extends Component {
             value: 10
         }
     }
-
     handleClick = (e) => {
 
         e.preventDefault();
@@ -28,10 +26,7 @@ class Child extends Component {
         console.log(1);
 
         this.setState(this.state)
-
-
     }
-
     render() {
         return (
             <div>
@@ -46,10 +41,6 @@ class Child extends Component {
 }
 
 
-
-
-
-
 class Form extends Component {
     //静态属性，添加static关键字，不然为实例属性(实例属性也可以写在constructor中)
     static contextTypes = {
@@ -58,12 +49,23 @@ class Form extends Component {
 
     // submitHandle = this._submitHandle.bind(this);
 
+
     constructor(props) {
         super(props);
         this.submitHandle = this.submitHandle.bind(this);
         this.state = {
             value: 1
         }
+
+    }
+
+    componentDidMount() {
+        this.props.router.setRouteLeaveHook(this.props.route, this.routerWillLeave)
+    }
+
+
+    routerWillLeave = (nextLocation) => {
+        return 'Your work is not saved! Are you sure you want to leave  form?'
 
     }
 
@@ -91,9 +93,6 @@ class Form extends Component {
         console.log(e)
     }
 
-
-
-
     render() {
         return (
             <div>
@@ -103,7 +102,7 @@ class Form extends Component {
 
                 </div>
                 <Child callback={() => { this.setState({...this.state}) } } />
-                <form onSubmit={this.submitHandle}>
+                             <form onSubmit={this.submitHandle}>
                     <input name="name" defaultValue="ywz" />
                     <input name="age" defaultValue="11" />
                     <input name="location" defaultValue="武汉" />
@@ -125,9 +124,5 @@ class Form extends Component {
         );
     }
 }
-
-
-
-
 
 export default Form;

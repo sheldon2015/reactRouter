@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Link, IndexLink } from 'react-router';
+// import { Link, IndexLink } from 'react-router';
+
+
+
+import Link from 'react-router/lib/Link'
+import IndexLink from 'react-router/lib/IndexLink'
+
 
 
 const ACTIVE = {
@@ -38,7 +44,10 @@ class Side extends Component {
                         <NavLink to="/form">form1111</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/test/test">test params1444444444444444</NavLink>
+                        <NavLink to="/test/test">test params</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/confirm">confirm</NavLink>
                     </li>
                 </ul>
             </div>

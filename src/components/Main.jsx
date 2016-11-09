@@ -1,4 +1,4 @@
-import React, { Component, createClass } from 'react';
+import React, { createClass } from 'react';
 
 const Main = createClass({
 

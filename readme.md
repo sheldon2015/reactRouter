@@ -30,16 +30,13 @@
 
     可以在jsx中配置route,也可以用普通的javascript对象去设置路由。
 
-    
-
-
-
-
-
-
 1. 生命周期
 
+    添加钩子`routerWillLeave`
+
 1. 服务端渲染
+
+1. 
 
     
 
