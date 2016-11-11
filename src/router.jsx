@@ -81,6 +81,14 @@ const router =
                 )
             })
         } } />
+        <Route path='list' getComponent={(nextState, callback) => {
+
+            require.ensure([], function (require) {
+                callback(null,
+                    require('./components/List.jsx').default
+                )
+            })
+        } } />
 
     </Route>
 

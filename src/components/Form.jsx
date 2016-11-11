@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 class Child extends Component {
 
-
-
+    static defaultProps = {
+        name: 'Stranger'
+    }
 
     constructor(props, context) {
         super(props, context);
@@ -24,7 +25,7 @@ class Child extends Component {
 
         e.preventDefault();
 
-        console.log(1);
+
 
         this.setState(this.state)
     }
@@ -47,9 +48,9 @@ class Child extends Component {
 }
 
 
-Child.defaultProps = {
-    name: 'Stranger'
-};
+// Child.defaultProps = {
+//     name: 'Stranger'
+// };
 
 
 class Form extends Component {
@@ -101,9 +102,8 @@ class Form extends Component {
     submitHandle2(e) {
         //不用自己绑定this
         e.preventDefault(e)
-        console.log(e)
 
-        console.log('this.component', this.component);
+
     }
 
     render() {
@@ -122,7 +122,7 @@ class Form extends Component {
 
                 </div>
                 {/*获取组建的引用*/}
-                <Child ref={(com) => { this.component = com;  } }  {...props} />
+                <Child ref={(com) => { this.component = com; } }  {...props} />
                 <form onSubmit={this.submitHandle}>
                     <input name="name" defaultValue="ywz" />
                     <input name="age" defaultValue="11" />

@@ -2,6 +2,17 @@
 import React, { Component } from 'react';
 import Side from './Side.jsx'
 class App extends Component {
+
+    //context 提供者
+
+    static childContextTypes = {
+        color: React.PropTypes.string
+
+    }
+    getChildContext() {
+        return { color: 'purple' }
+    }
+
     render() {
 
 

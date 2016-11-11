@@ -9,7 +9,7 @@ module.exports = {
 
     },
     output: {
-        path: 'prod/dist', //打包生成目录,开发阶段没什么用
+        // path: 'prod/dist', //打包生成目录,开发阶段没什么用
         filename: '[name].js',
         publicPath: '/dist/',
         chunkFilename: '[name].js'
@@ -31,7 +31,7 @@ module.exports = {
 
     },
 
-    
+
 
     module: {
 
