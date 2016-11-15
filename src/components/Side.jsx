@@ -38,6 +38,9 @@ class Side extends Component {
                         <Link activeStyle={ACTIVE} to="/login">loging</Link>
                     </li>
                     <li>
+                        <Link activeStyle={ACTIVE} to="/logincontext">loging context</Link>
+                    </li>
+                    <li>
                         <NavLink to="/regist">regist</NavLink>
                     </li>
                     <li>
@@ -54,6 +57,9 @@ class Side extends Component {
                     </li>
                     <li>
                         <NavLink to="/list">list</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/animation">animation</NavLink>
                     </li>
                 </ul>
             </div>

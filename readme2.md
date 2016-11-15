@@ -42,5 +42,46 @@
 
 1. context(谨慎用context，用不好容易引起bug)
 
-    如果不想值沿着组建tree一层层，向下传递或者又不向沿用redux、flux等状态管理库，可以试着用context。它可以携带state。组件tree可以在context中访问到他
+    1. 如果不想值沿着组建tree一层层，向下传递或者又不向沿用redux、flux等状态管理库，可以试着用context。它可以携带state。组件tree可以在context中访问到他.
+
+    1. context携带数据有个问题。当携带state信息时，并且媒介组件继承purecomponent或者添加了shouldComponentupdate方法return false时，子组件中的context不会发生变化(引起bug)。
+
+    理想的context使用方式是传递不改变的值，作为依赖注入到子组件中
+    例如 LoginContext组件(改变color的值,LoginContext组件不会重新渲染)。
+
+    ## 改变context中携带state数据，后代组建rerender的solution:
+
+    让数据变成stateful，当state改变的时候，通知组建中rerender。(发布订阅模式)
+
+    为了减少模版代码，有封装好的库可以解决这个问题如
+
+
+
+参考  [How to safely use React context](https://medium.com/@mweststrate/how-to-safely-use-react-context-b7e343eff076)
+
+1. API reference
+
+    render() 保持render为pure function
+
+    constructor()
+
+    shouldComponentUpdate()
+
+    setState()
+
+    forceUpdate()
+
+
+    dangerouslySetInnerHtml()
+
+    合成事件
+
+    动画插件
+
+    ReactTransitionGroup
+    ReactCssTransitionGroup
+
+    新能分析插件
+
+
 

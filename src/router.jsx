@@ -89,6 +89,22 @@ const router =
                 )
             })
         } } />
+        <Route path='logincontext' getComponent={(nextState, callback) => {
+
+            require.ensure([], function (require) {
+                callback(null,
+                    require('./components/LoginContext.jsx').default
+                )
+            })
+        } } />
+        <Route path='animation' getComponent={(nextState, callback) => {
+
+            require.ensure([], function (require) {
+                callback(null,
+                    require('./components/Animation.jsx').default
+                )
+            })
+        } } />
 
     </Route>
 

@@ -3,7 +3,42 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>react server  rendering 服务器端渲染</title>
+	<title>react server rendering 服务器端渲染</title>
+
+	<style>
+		example-enter {
+			opacity: 0.01;
+			background: red
+		}
+		
+		.example-enter.example-enter-active {
+			background: black;
+			opacity: .9;
+			transition: 1000ms ease-in;
+		}
+		
+		.example-leave {
+			opacity: 1;
+			background: red
+		}
+		
+		.example-leave.example-leave-active {
+			opacity: 0.1;
+			transition: 3000ms ease-in;
+			background: yellow;
+		}
+		
+		.example-appear {
+			opacity: 0.1;
+			background: green
+		}
+		
+		.example-appear.example-appear-active {
+			opacity: .9;
+			transition: 500ms ease-in;
+			background: purple;
+		}
+	</style>
 
 </head>
 

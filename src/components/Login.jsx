@@ -4,9 +4,6 @@ class Login extends Component {
 
     //获得context中的color
 
-
- 
-
     static contextTypes = {
         color: React.PropTypes.string
     }
