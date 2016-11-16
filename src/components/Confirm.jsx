@@ -16,7 +16,7 @@ const Confirm = React.createClass({
 
         return (
             <div>
-              
+
 
                 confirm
 
